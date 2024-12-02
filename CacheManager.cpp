@@ -46,18 +46,52 @@ bool CacheManager::add(int searchKey, Data* newItem){
     
     // first case. check if newItem already exist by using searchKey.
     // check in Hash table. look up is O(1)
-    if(_hashTable->getItem(searchKey) != nullptr){
-        //create Fifo node and Hash Node
-//        Node* newNode = new FifoNode(searchKey, newItem);
-//        Node* node = new HashNode(searchKey, newNode);
-        
-        
-        
-        
-        
+    if(_hashTable->getItem(searchKey) != nullptr){ 
+        return false;
         
     }
     
+    //create Fifo node and Hash Node
+    FifoNode* newFifoNode = new FifoNode(searchKey, newItem);
+    HashNode* newHashNode = new HashNode(searchKey, newFifoNode); //not sure about constructor
+        
+    //add both into each data structure
+    _hashTable->add(searchKey, newHashNode);
+    _fifoCache->insertAtHead(newFifoNode);
     
     return true;
 }
+
+//  remove(int)
+bool CacheManager::remove(int searchKey){
+    //check if item is in cachemanager
+    
+
+    //if it is 
+        //remove from hashtable
+            //return false
+        //remove from linkedlist
+            //return false
+
+    //if it isnt 
+        //return true
+}
+
+//  clear()
+
+void CacheManager::clear(){
+    //clear doubly linked list
+    _fifoCache->deleteList();
+    
+    //clear hashtable
+    _hashTable->clear();
+}
+
+bool CacheManager::contains(int value){
+    //check if item is in cachemanager
+    //implementation is done by DoublyLinkedList
+    Node* foundItem = _fifoCache->findNode(value);
+    //check we find the item, return true
+    return foundItem != nullptr;
+}
+ 
