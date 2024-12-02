@@ -48,7 +48,6 @@ bool CacheManager::add(int searchKey, Data* newItem){
     // check in Hash table. look up is O(1)
     if(_hashTable->getItem(searchKey) != nullptr){ 
         return false;
-        
     }
     
     //create Fifo node and Hash Node
@@ -64,21 +63,23 @@ bool CacheManager::add(int searchKey, Data* newItem){
 
 //  remove(int)
 bool CacheManager::remove(int searchKey){
-    //check if item is in cachemanager
-    
+    //check if item is not in cachemanager using hashtable (lookup is o(1))
+    if(!_hashTable->contains(searchKey)){
+        return false;
+    }
 
-    //if it is 
-        //remove from hashtable
-            //return false
-        //remove from linkedlist
-            //return false
+    // //Find node to delete from hashtable
+    // Node* nodeToRemove = _hashTable->getItem(searchKey);
 
-    //if it isnt 
-        //return true
+    //remove from hashtable
+    _hashTable->remove(searchKey);
+    //remove from linkedlist
+
+
+    return true;
 }
 
 //  clear()
-
 void CacheManager::clear(){
     //clear doubly linked list
     _fifoCache->deleteList();
