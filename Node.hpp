@@ -23,6 +23,10 @@ struct Node {
 
 	Node(int keyValue);
 	virtual ~Node();
+    
+    //note
+    // modified code.Added method to get key
+    int getKey();
 };
 
 #endif

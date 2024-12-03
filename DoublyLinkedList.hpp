@@ -58,6 +58,9 @@ public:
     
     // modified .hpp. added isEmpty()
     bool isEmpty();
+    
+    //modified for cache manager
+    Node* getTail();
 
 }; // end DoublyLinkedList
 #endif	// _DOUBLY_LINKED_LIST

@@ -28,6 +28,10 @@ public:
     // Note:
     //Modified HahshNode class. added Hashnode constructor
     HashNode(int value, Node* newCacheNode);
+    
+    //Node:
+    //Modified HashNode class. added getNode method
+    Node* getCacheNode();
 };
 
 

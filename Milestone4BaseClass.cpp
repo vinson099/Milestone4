@@ -188,7 +188,7 @@ int main() {
     CacheManager* cacheManager = new CacheManager(101);
 
     // Load the JSON file
-    std::ifstream inputFile("milestone4.json");
+    std::ifstream inputFile("/Users/francobarra/xcode_projects/CSC340/week_11/milestone4.json");
     if (!inputFile.is_open()) {
         std::cerr << "Failed to open the file.\n";
         return 1;

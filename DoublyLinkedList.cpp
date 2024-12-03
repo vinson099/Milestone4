@@ -299,3 +299,8 @@ bool DoublyLinkedList::isEmpty(){
     return head == nullptr;
 }
 
+
+//modified for cache manager
+Node* DoublyLinkedList::getTail(){
+    return tail;
+}
