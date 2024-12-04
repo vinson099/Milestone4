@@ -96,6 +96,9 @@ bool CacheManager::remove(int searchKey){
         
         //remove from hashtable
         _hashTable->remove(searchKey);
+        
+        //update current size
+        _curSize--;
         return true;
     }
 
@@ -110,6 +113,9 @@ void CacheManager::clear(){
     
     //clear hashtable
     _hashTable->clear();
+    
+    //clear size
+    _curSize = 0;
 }
 
 bool CacheManager::contains(int value){
