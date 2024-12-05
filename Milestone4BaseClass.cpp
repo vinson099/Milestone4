@@ -32,7 +32,19 @@
 #include <string>
 
 #include "json.hpp"
+#include "CacheManager.cpp"
 #include "CacheManager.hpp"
+#include "DoublyLinkedList.hpp"
+#include "DoublyLinkedList.cpp"
+#include "FifoNode.hpp"
+#include "FifoNode.cpp"
+#include "HashNode.hpp"
+#include "HashNode.cpp"
+#include "Hashtable.hpp"
+#include "Hashtable.cpp"
+#include "json.hpp"
+#include "Node.hpp"
+#include "Node.cpp"
 
 using json = nlohmann::json;
 
@@ -188,7 +200,7 @@ int main() {
     CacheManager* cacheManager = new CacheManager(101);
 
     // Load the JSON file
-    std::ifstream inputFile("/Users/francobarra/xcode_projects/CSC340/week_11/milestone4.json");
+    std::ifstream inputFile("C:\\codingFiles\\csc 340\\Milestone4\\milestone4.json");
     if (!inputFile.is_open()) {
         std::cerr << "Failed to open the file.\n";
         return 1;
