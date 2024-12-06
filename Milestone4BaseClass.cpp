@@ -200,7 +200,7 @@ int main() {
     CacheManager* cacheManager = new CacheManager(101);
 
     // Load the JSON file
-    std::ifstream inputFile("C:\\codingFiles\\csc 340\\Milestone4\\milestone4.json");
+    std::ifstream inputFile("C:\\Users\\Acer001\\.vscode\\projects\\CSC340\\Milestone4\\milestone4.json");
     if (!inputFile.is_open()) {
         std::cerr << "Failed to open the file.\n";
         return 1;

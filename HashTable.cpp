@@ -2,7 +2,7 @@
 //  HashTable.cpp
 //  week_9
 //
-//  Created by Franco Barra on 10/24/24.
+//  Created by Franco Barra and Vinson Thai on 10/24/24.
 //
 
 #include <stdio.h>

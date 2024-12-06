@@ -3,7 +3,7 @@
  * @brief This file contains the implementation of the DoublyLinkedList class.
  *
  * @author ChatGPT used to provide an example of file,class and methods header
- * @author Franco Barra
+ * @author Franco Barra and Vinson Thai
  * @date 10/03/24
  */
 

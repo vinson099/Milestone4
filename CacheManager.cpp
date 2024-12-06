@@ -2,7 +2,8 @@
 //  CacheManager.cpp
 //  week_11
 //
-//  Created by Franco Barra on 11/14/24.
+//  Created by Franco Barra and Vinson Thai on 11/14/24.
+//  
 //
 
 #include <stdio.h>
@@ -176,7 +177,7 @@ void CacheManager::clear(){
 
 
 /**
- * Checks to see if CacheManager contains a value, and if it does, move it to the front
+ * Checks to see if CacheManager contains a node with a specific value, and if it does, move it to the front
  *
  * <p>
  * This method uses the fifoCache to search for a value, returns whether or not the node was found after traversal. 
@@ -189,7 +190,7 @@ bool CacheManager::contains(int value){
     //implementation is done by DoublyLinkedList
     Node* foundItem = _fifoCache->findNode(value);
 
-    //check we find the item, move it to the front and return true
+    //if we find the item, move it to the front and return true
     _fifoCache->moveToHead(foundItem);
     return foundItem != nullptr;
 }

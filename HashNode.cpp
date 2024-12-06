@@ -2,7 +2,7 @@
 //  HashNode.cpp
 //  week_11
 //
-//  Created by Franco Barra on 11/13/24.
+//  Created by Franco Barra and Vinson Thai on 11/13/24.
 //
 
 #include <stdio.h>

@@ -225,7 +225,7 @@
             "add": {"key" : 706, "fullName" : "John Doe8", "address" : "1234 Cabin St", "city" : "Oakland", "state" : "CA", "zip" : "12345"}
           },
           {
-            "contains": {"key" : 706}
+            "contains": {"key" : 102}
           },
           {
             "getNumberOfItems": {}
