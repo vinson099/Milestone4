@@ -26,13 +26,20 @@ DoublyLinkedList* CacheManager::getFifoList(){
 }
 
 /**
- * Returns a node with the given key
+ * Returns a node with the given key, and moves the node to the front of the FifoList
  *
  * @param key The identifier for the HashNode we are trying to find
  * @return Returns a pointer to a hashnode within the cachemanager's hashtable
  */
 Node* CacheManager::getItem(int key){
-    return _hashTable->getItem(key);
+    // gets the hash node associated with the key
+    HashNode* retrieved = _hashTable->getItem(key);
+
+    // moves the node to the head when accessed
+    Node* retrievedCache = retrieved->getCacheNode();
+    _fifoCache->moveToHead(retrievedCache);
+    
+    return retrieved;
 }
 
 /**
@@ -169,10 +176,10 @@ void CacheManager::clear(){
 
 
 /**
- * Checks to see if CacheManager contains a value
+ * Checks to see if CacheManager contains a value, and if it does, move it to the front
  *
  * <p>
- * This method uses the fifoCache to search for a value, returns whether or not the node was found after traversal
+ * This method uses the fifoCache to search for a value, returns whether or not the node was found after traversal. 
  *
  * @param value The value we are looking for within each node
  * @return Returns true if a node with the given value is found
@@ -181,7 +188,9 @@ bool CacheManager::contains(int value){
     //check if item is in cachemanager
     //implementation is done by DoublyLinkedList
     Node* foundItem = _fifoCache->findNode(value);
-    //check we find the item, return true
+
+    //check we find the item, move it to the front and return true
+    _fifoCache->moveToHead(foundItem);
     return foundItem != nullptr;
 }
  
